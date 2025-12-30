@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Катюнчік — День, який не забудеться</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <div id="game">
+
+    <!-- BACKGROUND -->
+    <div id="bg"></div>
+
+    <!-- VIDEO CUTSCENE LAYER -->
+    <div id="videoLayer" class="hidden">
+      <video id="cutVideo" playsinline></video>
+    </div>
+
+    <!-- OVERLAY (fade / dim) -->
+    <div id="overlay" class="overlay hidden"></div>
+
+    <!-- CHARACTER LAYERS -->
+    <div id="characters">
+      <img id="charLeft" class="char left hidden" alt="left character"/>
+      <img id="charRight" class="char right hidden" alt="right character"/>
+    </div>
+
+    <!-- TOP UI -->
+    <div id="topUi">
+      <button id="btnMenu" class="uiBtn" title="Меню">≡</button>
+
+      <div id="inventory" class="inventory hidden">
+        <button id="invItem" class="invItem" title="Подарунок">
+          <img id="invIcon" alt="inventory icon"/>
+        </button>
+      </div>
+    </div>
+
+    <!-- CHOICE OVERLAY -->
+    <div id="choices" class="choices hidden">
+      <div class="choicesInner">
+        <div class="choicesTitle" id="choicesTitle">Оберіть варіант</div>
+        <div id="choicesList" class="choicesList"></div>
+      </div>
+    </div>
+
+    <!-- DIALOGUE BOX -->
+    <div id="dialogue" class="dialogue">
+      <img id="dialogueFrame" class="dialogueFrame" alt="dialogue frame"/>
+      <div id="namePlate" class="namePlate hidden"></div>
+      <div id="text" class="text"></div>
+
+      <div class="controls">
+        <button id="btnBack" class="ctrlBtn" title="Назад">⟵</button>
+        <button id="btnNext" class="ctrlBtn primary" title="Далі">Далі ⟶</button>
+      </div>
+    </div>
+
+    <!-- MODAL: Inventory "Inspect" -->
+    <div id="modal" class="modal hidden">
+      <div class="modalCard">
+        <div class="modalTop">
+          <div class="modalTitle">Подарунок</div>
+          <button id="modalClose" class="modalClose" aria-label="Закрити">✕</button>
+        </div>
+        <img id="modalImg" class="modalImg" alt="modal image"/>
+        <div id="modalText" class="modalText"></div>
+        <button id="modalInspect" class="modalInspect">Розглянути</button>
+      </div>
+    </div>
+
+    <!-- AUDIO -->
+    <audio id="bgm" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
